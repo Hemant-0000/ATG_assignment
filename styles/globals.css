@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Dancing+Script:wght@700&family=Great+Vibes&family=IBM+Plex+Sans&family=Inter:wght@300&family=Poppins&family=Roboto:ital,wght@0,400;1,300&family=Ubuntu:wght@400;500&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header{
+    background-image: (180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 100%);
+    background-image: url('../public/assets/cardimage/headerbg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
