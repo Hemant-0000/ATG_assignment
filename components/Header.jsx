@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import back_arrow from '../public/assets/back_arrow.svg'
 import filter_dropdown from '../public/assets/filter_dropdown.svg'
+import Link from 'next/link'
 
 function Header() {
     return (
@@ -9,7 +10,7 @@ function Header() {
             <div className='header w-[360px] h-[236px] mb-[66px]'>
                 <div className='absolute w-[16px] h-[16px] left-[20px] top-[20px] text-white'><Image src={back_arrow} alt='' /></div>
 
-                <div className='cursor-pointer w-[76px] h-[28px] absolute top-[14px] left-[266px] rounded-[4px] text-white box-border border-[0.8px] border-solid border-white'><span className='absolute w-[60px] h-[16px] top-[6px] left-[8px] font-[600] text-[12px] leading-[16px] text-white font-IBM'>Join Group</span></div>
+                <Link href={'/sign-up'}><div className='cursor-pointer w-[76px] h-[28px] absolute top-[14px] left-[266px] rounded-[4px] text-white box-border border-[0.8px] border-solid border-white'><span className='absolute w-[60px] h-[16px] top-[6px] left-[8px] font-[600] text-[12px] leading-[16px] text-white font-IBM'>Join Group</span></div></Link>
 
                 <h3 className='absolute top-[164px] left-[16px] w-[179px] h-[22px] font-[800] font-IBM text-[17px] leading-[22.1px] text-white '>Computer Engineering</h3>
                 <p className='w-[218px] h-[16px] absolute top-[188px] left-[16px] font-IBM font-[400] text-[12px] leading-[16px] text-white '>142,765 Computer Engineers follow this</p>
