@@ -1,6 +1,7 @@
 import React from 'react'
 import OtherPost from './OtherPost'
 import Post from './Post'
+import WritePost from './WritePost'
 
 const posts = [
     {
@@ -102,13 +103,14 @@ const otherposts = [
 
 function Posts() {
   return (
-    <div className='grid grid-cols-1'>
+    <div className='xl:grid xl:grid-cols-3 xl:w-[705.2px] mx-auto '>
         {posts.map(post=>{
             return <Post key={post.id} id={post.id} img={post.img} emoji={post.emoji} category={post.category} title={post.title} desc={post.desc} userimg={post.userimg} username={post.username} views={post.views}  />
         })}
         {otherposts.map(post=>{
             return <OtherPost key={post.id} id={post.id} img={post.img} emoji={post.emoji} category={post.category} title={post.title} date={post.date} location={post.location} site={post.site} userimg={post.userimg} username={post.username} views={post.views}  />
         })}
+        <div className='hidden xl:inline-flex'><WritePost/></div>
     </div>
   )
 }
