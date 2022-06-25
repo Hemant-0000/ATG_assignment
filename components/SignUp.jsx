@@ -71,10 +71,12 @@ function SignUp({ setOnSignUp, setOnSignIn }) {
 
 
             {/* for medium & above devices */}
-            <div className='hidden md:inline-flex w-[736px] h-[513px] absolute top-[186px] left-[15px] rounded-[8px] bg-white shadow-acc-shadow '>
+            <div className='hidden md:inline-flex z-50 w-[736px] h-[513px] absolute top-[186px] left-[15px] rounded-[8px] bg-white shadow-acc-shadow lg:left-[160px] lg:top-[186px]  xl:left-[352px] '>
 
                 {/* cut icon  */}
-                <div onClick={() => setOnSignUp(false)} className='cursor-pointer absolute top-[-38px] left-[710px] '><Image src={cross2} alt='' /></div>
+                <div onClick={() => setOnSignUp(false)} className='cursor-pointer w-[23.33px] h-[23.33px] absolute top-[-38px] left-[710px] lg:left-[722px] opacity-60 '>
+                    <Image src={cross2} alt='' />
+                </div>
 
                 {/* something written */}
                 <div className='w-[736px] h-[50px] absolute bg-[#EFFFF4] rounded-tl-[8px] rounded-tr-[8px] '>
@@ -123,7 +125,7 @@ function SignUp({ setOnSignUp, setOnSignIn }) {
                 <p className='w-[317px] h-[16px] absolute top-[461px] left-[383px] opacity-60 font-IBM font-[500] text-[11px] leading-[16px] text-black tracking-[-0.008em]  '>By signing up, you agree to our Terms & conditions, Privacy policy</p>
 
                 <div className='w-[300px]  absolute top-[150px] left-[420px]  '>
-                    <Image className='rounded-xl' src={signup_login}  alt=''/>
+                    <Image className='rounded-xl' src={signup_login} alt='' />
                 </div>
 
 

@@ -12,7 +12,7 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
 
             <div className='hidden md:inline-flex'><Navbar setOnSignUp={setOnSignUp} onSignUp={onSignUp} onSignIn={onSignIn} /></div>
 
-            <div id='header' className={`header ${(onSignUp || onSignIn) ? 'backdrop-blur-sm' : ''} w-[360px] h-[236px] mb-[66px] bg-[url('../public/assets/cardimage/headerbg.png')] bg-no-repeat bg-cover w-full xl:h-[440px] `}>
+            <div id='header' className={`header ${(onSignUp || onSignIn) ? 'backdrop-blur-sm' : ''} h-[236px] mb-[66px] bg-[url('../public/assets/cardimage/headerbg.png')] bg-no-repeat bg-cover w-full xl:h-[440px] `}>
 
                 {/* Back Arrow  */}
                 <div className='absolute w-[16px] h-[16px] left-[20px] top-[20px] text-white md:hidden '><Image src={back_arrow} alt='' /></div>
@@ -40,21 +40,21 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
                 <div className='hidden md:inline-flex md:absolute md:top-[80px] md:mx-auto '>
 
                     {/* All Posts(32) */}
-                    <p className='w-[93px] h-[21px] absolute top-[258px] ml-[50px] font-IBM font-[600] text-[16px] leading-[21px] text-[#000000] lg:ml-[140px] xl:top-[487px] '>All Posts(32)</p>
+                    <p className='cursor-pointer w-[93px] h-[21px] absolute top-[258px] ml-[50px] font-IBM font-[600] text-[16px] leading-[21px] text-[#000000] lg:ml-[140px] xl:top-[487px] '>All Posts(32)</p>
 
                     {/* Article */}
-                    <p className='w-[47px] h-[21px] absolute top-[258px] ml-[163px] font-IBM font-[400] text-[16px] leading-[21px] text-[#8A8A8A] lg:ml-[253px] xl:top-[487px] '>Article</p>
+                    <p className='cursor-pointer w-[47px] h-[21px] absolute top-[258px] ml-[163px] font-IBM font-[400] text-[16px] leading-[21px] text-[#8A8A8A] lg:ml-[253px] xl:top-[487px] '>Article</p>
 
                     {/* Events */}
-                    <p className='w-[41px] h-[21px] absolute top-[258px] ml-[230px] font-IBM font-[400] text-[16px] leading-[21px] text-[#8A8A8A] lg:ml-[320px] xl:top-[487px] '>Event</p>
+                    <p className='cursor-pointer w-[41px] h-[21px] absolute top-[258px] ml-[230px] font-IBM font-[400] text-[16px] leading-[21px] text-[#8A8A8A] lg:ml-[320px] xl:top-[487px] '>Event</p>
 
 
                     {/* Education */}
-                    <p className='w-[41px] h-[21px] absolute top-[258px] ml-[291px] font-IBM font-[400] text-[16px] leading-[21px] text-[#8A8A8A] lg:ml-[381px] xl:top-[487px] '>Education</p>
+                    <p className='cursor-pointer w-[41px] h-[21px] absolute top-[258px] ml-[291px] font-IBM font-[400] text-[16px] leading-[21px] text-[#8A8A8A] lg:ml-[381px] xl:top-[487px] '>Education</p>
 
 
                     {/* Job */}
-                    <p className='w-[41px] h-[21px] absolute top-[258px] ml-[380px] font-IBM font-[400] text-[16px] leading-[21px] text-[#8A8A8A] lg:ml-[470px] xl:top-[487px] '>Job</p>
+                    <p className='cursor-pointer w-[41px] h-[21px] absolute top-[258px] ml-[380px] font-IBM font-[400] text-[16px] leading-[21px] text-[#8A8A8A] lg:ml-[470px] xl:top-[487px] '>Job</p>
 
 
                     {/* Write a Post  */}

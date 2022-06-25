@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import three_dots from '../public/assets/three_dots.svg'
 import share_icon from '../public/assets/share_icon.svg'
@@ -7,6 +7,13 @@ import location_icon from '../public/assets/location_icon.svg'
 import location_icon2 from '../public/assets/location_icon2.svg'
 
 function OtherPost({ img, emoji, category, title, date, location, site, userimg, username, views }) {
+
+    const [dotClick, setDotClick] = useState(false)
+
+    const onTDotClick = () => {
+        dotClick ? setDotClick(false) : setDotClick(true);
+    }
+
     return (
         <>
             <div className='relative w-[360px] h-[374px]  md:w-[500px] md:h-[400px] bg-white shadow-my-shadow md:mt-[90px] md:mb-[-80px] mx-auto xl:mt-[56px] xl:mb-[-40px] xl:col-span-2 xl:w-[692px] xl:h-[472px] xl:right-[150px]  2xl:right-[270px] '>
@@ -21,7 +28,14 @@ function OtherPost({ img, emoji, category, title, date, location, site, userimg,
                 <h3 className='absolute top-[159px] left-[16px] w-[280px] h-[42px] font-IBM font-[600] text-[16px] leading-[21px] text-[#212529] md:w-[400px] md:top-[250px] xl:top-[275px] xl:left-[20px] xl:text-[22px] xl:leading-[134.17%] xl:w-[600px] '>{title}</h3>
 
                 {/* three dots icon */}
-                <div className='cursor-pointer h-[4.67px] w-[18.67px] text-[#212529] absolute top-[155.55px] left-[318.67px] md:left-[460px] md:top-[255px] xl:left-[648.67px] '><Image src={three_dots} alt='' /></div>
+                <div onClick={onTDotClick} className={`cursor-pointer ${dotClick && 'bg-[#EDEEF0]'} h-[32px] w-[32px] text-center rounded-[4px] text-[#212529] absolute top-[155.55px] left-[318.67px] md:left-[460px] md:top-[255px] xl:left-[648.67px] `}><Image src={three_dots} alt='' /></div>
+
+                {/* more options  */}
+                {dotClick && <div id='more_options' className='z-20 w-[160px] h-[102px] absolute top-[290px] left-[520px] bg-white rounded-[4px] shadow-tdot-shadow font-IBM '>
+                    <div className='w-[160px] h-[32px] absolute top-[4px] hover:bg-[#EDEEF0] '><p className='py-[7px] pl-[12px]  cursor-pointer '>Edit</p></div>
+                    <div className='w-[160px] h-[32px] absolute top-[35px] hover:bg-[#EDEEF0] '><p className='py-[7px] pl-[12px]  cursor-pointer '>Report</p></div>
+                    <div className='w-[160px] h-[32px] absolute top-[66px] hover:bg-[#EDEEF0] '><p className='py-[7px] pl-[12px]  cursor-pointer '>Option 3</p></div>
+                </div>}
 
                 {/* date */}
                 <div className='absolute top-[211px] left-[16px] w-[324px] h-[18px] font-IBM font-[400] text-[14px] leading-[18px] text-[#495057]  md:top-[280px] xl:top-[316px] xl:left-[44px]   '>
