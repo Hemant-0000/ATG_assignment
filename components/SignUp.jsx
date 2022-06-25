@@ -4,14 +4,13 @@ import cut_icon from '../public/assets/cut_icon.svg'
 import Line from '../public/assets/Line.svg'
 import facebook from '../public/assets/facebook.png'
 import google from '../public/assets/google.png'
-import Link from 'next/link'
 
-function Signup() {
+function SignUp({ setOnSignUp, setOnSignIn }) {
     return (
-        <>
-            <div className='create-account w-[360px] h-[462px] absolute top-[178px] bg-white '>
+        <div>
+            <div className='create-account z-50 w-[360px] h-screen transition ease-in duration-[8000ms] translate-y-[-15px] absolute top-[178px] bg-white '>
                 <h1 className='w-[130px] h-[23px] absolute top-[22px] left-[20px] font-IBM font-[700] text-[18px] leading-[23px] text-black '>Create Account</h1>
-                <Link href={'/'}><div className='cursor-pointer absolute top-[24px] left-[318px] '><Image src={cut_icon} alt='' /></div></Link>
+                <div onClick={() => setOnSignUp(false)} className='cursor-pointer absolute top-[24px] left-[318px] '><Image src={cut_icon} alt='' /></div>
 
                 {/* Form  */}
                 <div className='absolute top-[65px] left-[20px] w-[320px] h-[40px] bg-[#F7F8FA] box-border border-[1px] border-solid border-[#D9D9DB] rounded-t-[2px] rounded-b-[2px] '>
@@ -37,9 +36,8 @@ function Signup() {
 
                 <button className='w-[150px] h-[36px] absolute top-[244px] left-[20px] rounded-[20px] font-IBM font-[600] text-[13px] leading-[16px] text-center text-white bg-[#2F6CE5]'>Create Account</button>
 
-                <Link href={'/sign-in'}>
-                    <p className='w-[60px] h-[17px] absolute top-[253px] left-[280px] font-IBM font-[600] text-[13px] leading-[17px] text-center text-[#495057] underline cursor-pointer'>or, Sign In</p>
-                </Link>
+                {/* or, Sign In  */}
+                <p onClick={async () => { await setOnSignUp(false), await setOnSignIn(true) }} className='w-[60px] h-[17px] absolute top-[253px] left-[280px] font-IBM font-[600] text-[13px] leading-[17px] text-center text-[#495057] underline cursor-pointer'>or, Sign In</p>
 
                 {/* Sign up with Facebook  */}
                 <div className='cursor-pointer w-[320px] h-[38px] absolute top-[302px] left-[20px] rounded-[2px] box-border bg-white border-[0.6px] border-solid border-[#D9D9DB]  '>
@@ -59,8 +57,8 @@ function Signup() {
                 <p className='absolute top-[421px] left-[57px] w-[240px] h-[32px] font-IBM font-[400] text-[11px] leading-[16px] text-center text-[#212529] tracking-[-0.008em] '>By signing up, you agree to our Terms & conditions, Privacy policy</p>
 
             </div>
-        </>
+        </div>
     )
 }
 
-export default Signup
+export default SignUp

@@ -102,7 +102,7 @@ const otherposts = [
 
 function Posts() {
   return (
-    <div>
+    <div className='backdrop-blur-lg'>
         {posts.map(post=>{
             return <Post key={post.id} id={post.id} img={post.img} emoji={post.emoji} category={post.category} title={post.title} desc={post.desc} userimg={post.userimg} username={post.username} views={post.views}  />
         })}

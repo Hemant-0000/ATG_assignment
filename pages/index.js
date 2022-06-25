@@ -1,8 +1,15 @@
 import Head from 'next/head'
+import { useState } from 'react'
 import Header from '../components/Header'
 import Posts from '../components/Posts'
+import SignIn from '../components/Signin'
+import SignUp from '../components/SignUp'
 
 export default function Home() {
+
+  const [onSignUp, setOnSignUp] = useState(false)
+  const [onSignIn, setOnSignIn] = useState(false)
+  
   return (
     <div className=''>
       <Head>
@@ -11,8 +18,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <Header />
-        <Posts />
+
+      <Header setOnSignUp={setOnSignUp} onSignUp={onSignUp} onSignIn={onSignIn} />
+      {onSignUp && <SignUp setOnSignIn={setOnSignIn} setOnSignUp={setOnSignUp} />}
+      {onSignIn && <SignIn setOnSignUp={setOnSignUp} setOnSignIn={setOnSignIn} />}
+      <Posts />
 
     </div>
   )

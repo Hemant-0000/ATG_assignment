@@ -6,10 +6,8 @@
 @tailwind utilities;
 
 .header{
-    background-image: (180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6) 100%);
-    background-image: url('../public/assets/cardimage/headerbg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6), 100%);
+    
 }
 .post-bg{
     background: #C4C4C4;
