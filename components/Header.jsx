@@ -31,7 +31,7 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
 
                     {/* Filter button  */}
                     <button className='w-[106px] h-[32px] absolute top-[250px] left-[236px] rounded-[4px] bg-[#F1F3F5] sm:left-[500px]'><span className='absolute top-[8px] left-[10px] w-[55px] h-[17px] font-IBM font-[700] text-[13px] leading-[17px] text-[#212529] '>Filter: All</span>
-                        <div className='absolute top-[1.8px] left-[81.83px]'><Image src={filter_dropdown} alt='' /></div>
+                        <p className='absolute top-[1.8px] left-[81.83px]'><Image src={filter_dropdown} alt='' /></p>
                     </button>
                 </div>
 
@@ -60,12 +60,12 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
                     {/* Write a Post  */}
                     <button className='w-[133px] h-[36px] absolute top-[250px] ml-[490px] rounded-[4px] bg-[#EDEEF0] lg:ml-[580px] xl:top-[478px] xl:left-[400px] '>
                         <span className='absolute top-[8px] left-[12px] w-[83px] h-[20px] font-IBM font-[700] text-[15px] leading-[20px] text-black '>Write a Post</span>
-                        <div className='absolute top-[2.5px] left-[111.42px]'><Image src={filter_dropdown} alt='' /></div>
+                        <p className='absolute top-[2.5px] left-[111.42px]'><Image src={filter_dropdown} alt='' /></p>
                     </button>
 
                     {/* Join Group  */}
                     <button className='w-[125px] h-[36px] absolute top-[250px] ml-[630px] bg-[#2F6CE5] rounded-[4px] lg:ml-[720px] xl:top-[478px] xl:left-[410px] '>
-                        <div className='w-[22px] h-[11.92px] absolute top-[5.5px] left-[10px]  '><Image src={join_group} alt=''/></div>
+                        <p className='w-[22px] h-[11.92px] absolute top-[5.5px] left-[10px]  '><Image src={join_group} alt=''/></p>
                         <span className='w-[75px] h-[20px] absolute left-[38px] top-[8px] font-IBM font-[700] text-[15px] leading-[20px] text-white '>Join Group</span>
                     </button>
 

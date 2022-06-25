@@ -23,7 +23,7 @@ function Post({ img, category, emoji, title, desc, userimg, username, views }) {
                 <p className='absolute top-[134px] left-[16px] h-[19px] font-IBM font-[600] text-[14px]  leading-[18px] text-[#343A40] md:top-[228.5px] xl:top-[240px] xl:left-[20px] xl:text-[18px] xl:leading-[23px] '>{emoji} {category}</p>
 
                 {/* title  */}
-                <h3 className='absolute top-[159px] left-[16px] w-[280px] h-[42px] font-IBM font-[600] text-[16px] leading-[21px] text-[#212529] md:w-[400px] md:top-[255px] xl:top-[275px] xl:left-[20px] xl:text-[22px] xl:leading-[134.17%] xl:w-[600px] '>{title}</h3>
+                <p className='absolute top-[159px] left-[16px] w-[280px] h-[42px] font-IBM font-[600] text-[16px] leading-[21px] text-[#212529] md:w-[400px] md:top-[255px] xl:top-[275px] xl:left-[20px] xl:text-[22px] xl:leading-[134.17%] xl:w-[600px] '>{title}</p>
 
                 {/* three dots icon */}
                 <div id='threedots' onClick={onTDotClick} className={`cursor-pointer ${dotClick && 'bg-[#EDEEF0]'} h-[32px] w-[32px] rounded-[4px] text-center text-[#212529] absolute top-[155.55px] left-[318.67px] md:left-[460px] md:top-[255px] xl:left-[648.67px] `}><Image src={three_dots} alt='' /></div>
