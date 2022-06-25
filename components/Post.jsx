@@ -6,7 +6,7 @@ import share_icon from '../public/assets/share_icon.svg'
 function Post({ img, category, emoji, title, desc, userimg, username, views }) {
     return (
         <>
-            <div className='relative w-[360px] h-[307px] bg-white shadow-my-shadow mb-2'>
+            <div className='relative w-[360px] h-[307px] bg-white shadow-my-shadow mb-2 mx-auto'>
 
                 {/* Post image  */}
                 <img src={img} className='w-[360px] h-[120px] object-fill post-bg' alt='' />

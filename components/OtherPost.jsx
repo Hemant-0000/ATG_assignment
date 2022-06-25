@@ -9,7 +9,7 @@ import location_icon2 from '../public/assets/location_icon2.svg'
 function OtherPost({ img, emoji, category, title, date, location, site, userimg, username, views }) {
     return (
         <>
-            <div className='relative w-[360px] h-[374px] bg-white shadow-my-shadow mb-2'>
+            <div className='relative w-[360px] h-[374px] bg-white shadow-my-shadow mb-2 mx-auto'>
 
                 {/* Post image  */}
                 <img src={img} className='w-[360px] h-[120px] object-fill post-bg' alt='' />
