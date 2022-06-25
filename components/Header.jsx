@@ -10,7 +10,7 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
     return (
         <>
 
-            <div className='hidden md:inline-flex'><Navbar /></div>
+            <div className='hidden md:inline-flex'><Navbar setOnSignUp={setOnSignUp} onSignUp={onSignUp} onSignIn={onSignIn} /></div>
 
             <div id='header' className={`header ${(onSignUp || onSignIn) ? 'backdrop-blur-sm' : ''} w-[360px] h-[236px] mb-[66px] bg-[url('../public/assets/cardimage/headerbg.png')] bg-no-repeat bg-cover w-full xl:h-[440px] `}>
 

@@ -22,7 +22,7 @@ export default function Home() {
       <Header setOnSignUp={setOnSignUp} onSignUp={onSignUp} onSignIn={onSignIn} />
       {onSignUp && <SignUp setOnSignIn={setOnSignIn} setOnSignUp={setOnSignUp} />}
       {onSignIn && <SignIn setOnSignUp={setOnSignUp} setOnSignIn={setOnSignIn} />}
-      <Posts />
+      {/* <Posts /> */}
 
     </div>
   )
