@@ -5,6 +5,8 @@ import share_icon from '../public/assets/share_icon.svg'
 import calendar from '../public/assets/calendar.svg'
 import location_icon from '../public/assets/location_icon.svg'
 import location_icon2 from '../public/assets/location_icon2.svg'
+import eye from '../public/assets/eye.png'
+
 
 function OtherPost({ img, emoji, category, title, date, location, site, userimg, username, views }) {
 
@@ -24,7 +26,7 @@ function OtherPost({ img, emoji, category, title, date, location, site, userimg,
                 <p className='absolute top-[159px] left-[16px] w-[280px] h-[42px] font-IBM font-[600] text-[16px] leading-[21px] text-[#212529] md:w-[400px] md:top-[250px] xl:top-[275px] xl:left-[20px] xl:text-[22px] xl:leading-[134.17%] xl:w-[600px] '>{title}</p>
 
                 {/* three dots icon */}
-                <div onClick={()=> setDotClick(!dotClick)} className={`cursor-pointer ${dotClick && 'bg-[#EDEEF0]'} h-[32px] w-[32px] text-center rounded-[4px] text-[#212529] absolute top-[155.55px] left-[318.67px] md:left-[460px] md:top-[255px] xl:left-[648.67px] `}><Image src={three_dots} alt='' /></div>
+                <div onClick={() => setDotClick(!dotClick)} className={`cursor-pointer ${dotClick && 'bg-[#EDEEF0]'} h-[32px] w-[32px] text-center rounded-[4px] text-[#212529] absolute top-[155.55px] left-[318.67px] md:left-[460px] md:top-[255px] xl:left-[648.67px] `}><Image src={three_dots} alt='' /></div>
 
                 {/* more options  */}
                 {dotClick && <div id='more_options' className='hidden xl:inline-block z-20 w-[160px] h-[102px] absolute top-[290px] left-[520px] bg-white rounded-[4px] shadow-tdot-shadow font-IBM '>
@@ -60,9 +62,14 @@ function OtherPost({ img, emoji, category, title, date, location, site, userimg,
 
                 {/* username  */}
                 <p className='absolute top-[312px] left-[65px] h-[17px] font-IBM font-[700] text-[13px] leading-[17px] text-[#212529] md:top-[360px] xl:top-[416px] xl:left-[78px] xl:text-[18px] xl:leading-[23px]  '>{username}</p>
+                
 
                 {/* views  */}
-                <p className='absolute top-[329px] left-[65px] h-[16px] font-IBM font-[600] text-[12px] leading-[16px] text-[#495057] md:top-[355px] md:left-[360px]  xl:top-[419px] xl:left-[521px] xl:text-[14px] xl:leading-[18px]  '>{views}</p>
+                <div className='absolute w-[16.5px] h-[11.25px] top-[353.2px] left-[335px] opacity-70  xl:top-[418px] xl:left-[495.75px]  '>
+                    <Image src={eye} alt='' />
+                </div>
+                <p className='absolute top-[269px] left-[65px] h-[16px] font-IBM font-[600] text-[12px] leading-[16px] text-[#525252] md:top-[355px] md:left-[360px] xl:top-[419px] xl:left-[521px] xl:text-[14px] xl:leading-[18px] '>{views}</p>
+
 
                 {/* share button  */}
                 <button className='absolute w-[70px] h-[36px] top-[311px] left-[272px] bg-[#F1F3F5] rounded-[4px] md:top-[345px] md:w-[38px] md:left-[445px] xl:top-[410px] xl:left-[630px] xl:w-[42px] '>
