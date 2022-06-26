@@ -19,15 +19,15 @@ function Navbar({ setOnSignUp, onSignUp, onSignIn }) {
             <div className={`w-full h-[72px] ${(onSignIn || onSignUp) ? 'blur-md' : ''} `}>
 
                 {/* Logo  */}
-                <div className='absolute w-[18.61px] h-[21.45px] top-[25.17px] left-[38px]'><Image src={A} alt=' ' /></div>
-                <div className='absolute w-[16.54.61px] h-[21.22px] top-[24.3px] left-[54px]'><Image src={T} alt=' ' /></div>
-                <div className='absolute w-[16.79px] h-[21.7px] top-[25.17px] left-[70px]'><Image src={G} alt=' ' /></div>
-                <div className='absolute w-[2.01px] h-[3.68px] top-[26px] left-[89px]'><Image src={dot_atg} alt=' ' /></div>
-                <div className='absolute w-[25.89px] h-[21.6px] top-[24px] left-[90px]'><Image src={W} alt=' ' /></div>
-                <div className='absolute w-[23.98px] h-[24px] top-[23px] left-[116px]'><Image src={O} alt=' ' /></div>
-                <div className='absolute w-[15.2px] h-[21.3px] top-[24px] left-[142px]'><Image src={R} alt=' ' /></div>
-                <div className='absolute w-[13.21px] h-[21.22px] top-[24px] left-[160px]'><Image src={L} alt=' ' /></div>
-                <div className='absolute w-[16.21px] h-[21.23px] top-[24px] left-[175px]'><Image src={D} alt=' ' /></div>
+                <div className='cursor-pointer absolute w-[18.61px] h-[21.45px] top-[25.17px] left-[38px]'><Image src={A} alt=' ' /></div>
+                <div className='cursor-pointer absolute w-[16.54.61px] h-[21.22px] top-[24.3px] left-[54px]'><Image src={T} alt=' ' /></div>
+                <div className='cursor-pointer absolute w-[16.79px] h-[21.7px] top-[25.17px] left-[70px]'><Image src={G} alt=' ' /></div>
+                <div className='cursor-pointer absolute w-[2.01px] h-[3.68px] top-[26px] left-[89px]'><Image src={dot_atg} alt=' ' /></div>
+                <div className='cursor-pointer absolute w-[25.89px] h-[21.6px] top-[24px] left-[90px]'><Image src={W} alt=' ' /></div>
+                <div className='cursor-pointer absolute w-[23.98px] h-[24px] top-[23px] left-[116px]'><Image src={O} alt=' ' /></div>
+                <div className='cursor-pointer absolute w-[15.2px] h-[21.3px] top-[24px] left-[142px]'><Image src={R} alt=' ' /></div>
+                <div className='cursor-pointer absolute w-[13.21px] h-[21.22px] top-[24px] left-[160px]'><Image src={L} alt=' ' /></div>
+                <div className='cursor-pointer absolute w-[16.21px] h-[21.23px] top-[24px] left-[175px]'><Image src={D} alt=' ' /></div>
 
                 {/* Search Bar  */}
                 <div className='w-[360px] h-[42px] absolute top-[16px] left-[215px] rounded-[21px] bg-[#F2F2F2] lg:left-[320px] xl:left-[480px] 2xl:left-[600px] '>
