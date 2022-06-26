@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useState } from 'react'
 import Header from '../components/Header'
 import Posts from '../components/Posts'
-import SignIn from '../components/Signin'
+import SignIn from '../components/SignIn'
 import SignUp from '../components/SignUp'
 
 export default function Home() {
