@@ -12,7 +12,7 @@ function SignUp({ setOnSignUp, setOnSignIn }) {
         <>
 
             {/* for small devices  */}
-            <div className='md:hidden create-account z-50 w-[360px] h-screen transition ease-in duration-[8000ms] translate-y-[-15px] absolute top-[178px] bg-white md:top-[24px] left-2 '>
+            <div className='md:hidden create-account z-50 w-[360px] h-screen  translate-y-[-15px] absolute top-[178px] bg-white md:top-[24px] sm:left-[135px] left-2 '>
 
                 {/* Heading  */}
                 <h1 className='w-[130px] h-[23px] absolute top-[22px] left-[20px] font-IBM font-[700] text-[18px] leading-[23px] text-black '>Create Account</h1>
@@ -71,7 +71,7 @@ function SignUp({ setOnSignUp, setOnSignIn }) {
 
 
             {/* for medium & above devices */}
-            <div className='hidden md:inline-flex z-50 w-[736px] h-[513px] absolute top-[186px] left-[15px] rounded-[8px] bg-white shadow-acc-shadow lg:left-[160px] lg:top-[158px]  xl:left-[352px] '>
+            <div className='hidden md:inline-flex z-50 w-[736px] h-[513px] absolute top-[186px] left-[15px] rounded-[8px] bg-white shadow-acc-shadow lg:left-[150px] lg:top-[158px]  xl:left-[300px]  2xl:left-[358px] '>
 
                 {/* cut icon  */}
                 <div onClick={() => setOnSignUp(false)} className='cursor-pointer w-[23.33px] h-[23.33px] absolute top-[-38px] left-[710px] lg:left-[722px] opacity-60 '>
@@ -130,6 +130,7 @@ function SignUp({ setOnSignUp, setOnSignIn }) {
 
 
             </div>
+
         </>
     )
 }
