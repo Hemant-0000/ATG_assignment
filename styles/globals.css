@@ -5,10 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.header{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.6), 100%);
-    
-}
 .post-bg{
     background: #C4C4C4;
     border-radius: 4px 4px 0px 0px;

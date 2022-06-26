@@ -9,10 +9,9 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
 
     return (
         <>
-
             <div className='hidden md:inline-flex'><Navbar setOnSignUp={setOnSignUp} onSignUp={onSignUp} onSignIn={onSignIn} /></div>
 
-            <div id='header' className={`header ${(onSignUp || onSignIn) ? 'blur-md' : ''} h-[236px] mb-[66px] bg-[url('../public/assets/cardimage/headerbg.png')] bg-no-repeat bg-cover w-full xl:h-[440px] `}>
+            <div id='header' className={`header ${(onSignUp || onSignIn) ? 'blur-md' : ''} h-[236px] mb-[66px] bg-no-repeat bg-cover bg-gradient-to-tr from-cyan-400 to bg-cyan-800 w-full xl:h-[440px] `}>
 
                 {/* Back Arrow  */}
                 <div className='absolute w-[16px] h-[16px] left-[20px] top-[20px] text-white md:hidden '><Image src={back_arrow} alt='' /></div>

@@ -31,7 +31,13 @@ function OtherPost({ img, emoji, category, title, date, location, site, userimg,
                 <div onClick={onTDotClick} className={`cursor-pointer ${dotClick && 'bg-[#EDEEF0]'} h-[32px] w-[32px] text-center rounded-[4px] text-[#212529] absolute top-[155.55px] left-[318.67px] md:left-[460px] md:top-[255px] xl:left-[648.67px] `}><Image src={three_dots} alt='' /></div>
 
                 {/* more options  */}
-                {dotClick && <div id='more_options' className='z-20 w-[160px] h-[102px] absolute top-[290px] left-[520px] bg-white rounded-[4px] shadow-tdot-shadow font-IBM '>
+                {dotClick && <div id='more_options' className='hidden xl:inline-block z-20 w-[160px] h-[102px] absolute top-[290px] left-[520px] bg-white rounded-[4px] shadow-tdot-shadow font-IBM '>
+                    <div className='w-[160px] h-[32px] absolute top-[4px] hover:bg-[#EDEEF0] '><p className='py-[7px] pl-[12px]  cursor-pointer '>Edit</p></div>
+                    <div className='w-[160px] h-[32px] absolute top-[35px] hover:bg-[#EDEEF0] '><p className='py-[7px] pl-[12px]  cursor-pointer '>Report</p></div>
+                    <div className='w-[160px] h-[32px] absolute top-[66px] hover:bg-[#EDEEF0] '><p className='py-[7px] pl-[12px]  cursor-pointer '>Option 3</p></div>
+                </div>}
+
+                {dotClick && <div id='more_options' className='xl:hidden w-[160px] h-[102px] absolute top-[192px] left-[190px] md:top-[292px] md:left-[333px] z-20 bg-white rounded-[4px] shadow-tdot-shadow font-IBM '>
                     <div className='w-[160px] h-[32px] absolute top-[4px] hover:bg-[#EDEEF0] '><p className='py-[7px] pl-[12px]  cursor-pointer '>Edit</p></div>
                     <div className='w-[160px] h-[32px] absolute top-[35px] hover:bg-[#EDEEF0] '><p className='py-[7px] pl-[12px]  cursor-pointer '>Report</p></div>
                     <div className='w-[160px] h-[32px] absolute top-[66px] hover:bg-[#EDEEF0] '><p className='py-[7px] pl-[12px]  cursor-pointer '>Option 3</p></div>
