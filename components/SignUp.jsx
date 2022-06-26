@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import cut_icon from '../public/assets/cut_icon.svg'
 import cross2 from '../public/assets/cross2.svg'
@@ -6,8 +6,12 @@ import Line from '../public/assets/Line.svg'
 import facebook from '../public/assets/facebook.png'
 import google from '../public/assets/google.png'
 import signup_login from '../public/assets/signup_login.jpg'
+import eye from '../public/assets/eye.png'
 
 function SignUp({ setOnSignUp, setOnSignIn }) {
+
+    const [textType, setTextType] = useState('password')
+
     return (
         <>
 
@@ -36,7 +40,12 @@ function SignUp({ setOnSignUp, setOnSignIn }) {
                     <input className='absolute w-[320px] h-[40px] top-[37.7px] left-[-1px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[12px]' placeholder='Email' type="email" />
 
                     {/* Password  */}
-                    <input className='absolute w-[320px] h-[40px] top-[75.4px] left-[-1px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[12px]' placeholder='Password' type="password" />
+                    <div className='absolute w-[320px] h-[40px] top-[75.4px] left-[-1px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[12px]'>
+                        <input className='outline-none w-[250px] bg-[#F7F8FA]' placeholder='Password' type={textType} />
+                        <div onClick={() => textType === 'password' ? setTextType('text') : setTextType('password')} className='w-[16.25px] h-[11.25px] absolute top-[10px] left-[284.75px] ' >
+                            <Image className={`${textType === 'text' ? 'opacity-90' : 'opacity-50'}`} src={eye} alt='' />
+                        </div>
+                    </div>
 
                     {/* Confirm Password  */}
                     <input className='absolute w-[320px] h-[40px] top-[113.1px] left-[-1px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[12px]' placeholder='Confirm Password' type="password" />
@@ -96,7 +105,14 @@ function SignUp({ setOnSignUp, setOnSignIn }) {
                 <input className='absolute w-[320px] h-[46px] top-[174px] left-[36px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[15px]' placeholder='Email' type="email" />
 
                 {/* Password  */}
-                <input className='absolute w-[320px] h-[46px] top-[219px] left-[36px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[15px]' placeholder='Password' type="password" />
+                <div className='absolute w-[320px] h-[46px] top-[219px] left-[36px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] box-border border-[1px] border-solid border-[#D9D9DB] p-[15px]'>
+                    <input className='outline-none w-[250px] bg-[#F7F8FA]' placeholder='Password' type={textType} />
+                    <div onClick={() => textType === 'password' ? setTextType('text') : setTextType('password')} className='cursor-pointer w-[16.25px] h-[11.25px] absolute top-[12px] left-[284.75px]' >
+                    <Image className={`${textType === 'text' ? 'opacity-90' : 'opacity-50'}`} src={eye} alt='' />
+                    </div>
+                </div>
+
+
 
                 {/* Confirm Password  */}
                 <input className='absolute w-[320px] h-[46px] top-[264px] left-[36px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[15px]' placeholder='Confirm Password' type="password" />
