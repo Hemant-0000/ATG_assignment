@@ -13,10 +13,10 @@ import L from '../public/assets/L.svg'
 import D from '../public/assets/D.svg'
 
 
-function Navbar({ setOnSignUp }) {
+function Navbar({ setOnSignUp, onSignUp, onSignIn }) {
     return (
         <>
-            <div className='w-full h-[72px] '>
+            <div className={`w-full h-[72px] ${(onSignIn || onSignUp) ? 'blur-md' : ''} `}>
 
                 {/* Logo  */}
                 <div className='absolute w-[18.61px] h-[21.45px] top-[25.17px] left-[38px]'><Image src={A} alt=' ' /></div>

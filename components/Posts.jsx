@@ -101,18 +101,18 @@ const otherposts = [
     },
 ]
 
-function Posts() {
-  return (
-    <div className='xl:grid xl:grid-cols-3 xl:w-[705.2px] mx-auto '>
-        {posts.map(post=>{
-            return <Post key={post.id} id={post.id} img={post.img} emoji={post.emoji} category={post.category} title={post.title} desc={post.desc} userimg={post.userimg} username={post.username} views={post.views}  />
-        })}
-        {otherposts.map(post=>{
-            return <OtherPost key={post.id} id={post.id} img={post.img} emoji={post.emoji} category={post.category} title={post.title} date={post.date} location={post.location} site={post.site} userimg={post.userimg} username={post.username} views={post.views}  />
-        })}
-        <div className='hidden xl:inline-flex'><WritePost/></div>
-    </div>
-  )
+function Posts({ onSignIn, onSignUp }) {
+    return (
+        <div className={`xl:grid xl:grid-cols-3 xl:w-[705.2px] mx-auto  ${(onSignIn || onSignUp) ? 'blur-md' : ''} `}>
+            {posts.map(post => {
+                return <Post key={post.id} id={post.id} img={post.img} emoji={post.emoji} category={post.category} title={post.title} desc={post.desc} userimg={post.userimg} username={post.username} views={post.views} />
+            })}
+            {otherposts.map(post => {
+                return <OtherPost key={post.id} id={post.id} img={post.img} emoji={post.emoji} category={post.category} title={post.title} date={post.date} location={post.location} site={post.site} userimg={post.userimg} username={post.username} views={post.views} />
+            })}
+            <div className='hidden xl:inline-flex'><WritePost onSignIn={onSignIn} onSignUp={onSignUp} /></div>
+        </div>
+    )
 }
 
 export default Posts

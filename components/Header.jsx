@@ -12,7 +12,7 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
 
             <div className='hidden md:inline-flex'><Navbar setOnSignUp={setOnSignUp} onSignUp={onSignUp} onSignIn={onSignIn} /></div>
 
-            <div id='header' className={`header ${(onSignUp || onSignIn) ? 'backdrop-blur-sm' : ''} h-[236px] mb-[66px] bg-[url('../public/assets/cardimage/headerbg.png')] bg-no-repeat bg-cover w-full xl:h-[440px] `}>
+            <div id='header' className={`header ${(onSignUp || onSignIn) ? 'blur-md' : ''} h-[236px] mb-[66px] bg-[url('../public/assets/cardimage/headerbg.png')] bg-no-repeat bg-cover w-full xl:h-[440px] `}>
 
                 {/* Back Arrow  */}
                 <div className='absolute w-[16px] h-[16px] left-[20px] top-[20px] text-white md:hidden '><Image src={back_arrow} alt='' /></div>
@@ -23,6 +23,8 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
 
                 {/* Computer Engineering  */}
                 <h3 className='absolute top-[164px] left-[16px] w-[179px] h-[22px] font-[800] font-IBM text-[17px] leading-[22.1px] text-white sm:left-[30px] sm:text-[19px] sm:w-[200px]  md:left-[80px] md:text-[22px] md:w-[250px] md:top-[236px] xl:top-[358px] xl:text-[36px] xl:leading-[47px] xl:w-[378px] '>Computer Engineering</h3>
+
+                {/* something is written beneath of computer engineering */}
                 <p className='w-[218px] h-[16px] absolute top-[188px] left-[16px] font-IBM font-[400] text-[12px] leading-[16px] text-white sm:left-[30px] sm:top-[190px] sm:text-[13px] sm:w-[280px] md:left-[80px] md:text-[12px] md:leading-[10px] md:top-[268px] mb-[32px] xl:top-[409px] xl:text-[18px] xl:leading-[23px] xl:w-[327px] '>142,765 Computer Engineers follow this</p>
 
                 <div className='md:hidden'>

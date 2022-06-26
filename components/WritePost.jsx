@@ -7,7 +7,7 @@ import warning from '../public/assets/warning.svg'
 import thumbsup from '../public/assets/thumbsup.svg'
 import cross from '../public/assets/cross.svg'
 
-function WritePost() {
+function WritePost({onSignIn, onSignUp}) {
 
   const onInput = () => {
     let edite = document.getElementById('edite');
@@ -27,7 +27,7 @@ function WritePost() {
 
   return (
     <>
-      <div className='xl:col-span-1'>
+      <div className={`xl:col-span-1 ${(onSignIn || onSignUp) ? 'hidden' : ''} `}>
         {/* location icon  */}
         <div className='absolute h-[15px]  w-[10.5px] top-[657.5px] left-[1000.75px] '><Image src={location_icon} alt='' /></div>
         <div className='absolute h-[15px] w-[10.5px]  top-[650px] left-[1003.6px] '><Image src={location_icon2} alt='' /></div>
