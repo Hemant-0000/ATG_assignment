@@ -7,10 +7,10 @@ import eye from '../public/assets/eye.png'
 function Post({ img, category, emoji, title, desc, userimg, username, views }) {
 
     const [dotClick, setDotClick] = useState(false)
-    
+
     return (
         <>
-            <div className='relative w-[360px] h-[307px] md:w-[500px] md:h-[400px] bg-white shadow-my-shadow md:mt-[90px] md:mb-[-80px] mx-auto xl:mt-[56px] xl:mb-[-40px] xl:col-span-2 xl:w-[692px] xl:h-[472px] xl:right-[150px] 2xl:right-[270px] '>
+            <div className='relative w-[360px] h-[307px] md:w-[500px] md:h-[400px] bg-white shadow-my-shadow mt-[10px] md:mt-[90px] md:mb-[-80px] mx-auto xl:mt-[56px] xl:mb-[-40px] xl:col-span-2 xl:w-[692px] xl:h-[472px] xl:right-[150px] 2xl:right-[270px] '>
 
                 {/* Post image  */}
                 <img src={img} className='w-[360px] md:w-[500px] h-[120px] md:h-[220px] object-fill post-bg xl:w-[692px] xl:h-[220px] ' alt='' />

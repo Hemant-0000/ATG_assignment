@@ -17,7 +17,7 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
                 <div className='absolute w-[16px] h-[16px] left-[20px] top-[20px] text-white md:hidden '><Image src={back_arrow} alt='' /></div>
 
                 {/* Join Group  */}
-                <div onClick={() => setOnSignUp(true)} className='cursor-pointer w-[76px] h-[28px] absolute top-[14px] left-[266px] rounded-[4px] text-white box-border border-[0.8px] border-solid border-white sm:left-[550px] md:hidden'><span className='absolute w-[60px] h-[16px] top-[6px] left-[8px] font-[600] text-[12px] leading-[16px] text-white font-IBM'>Join Group</span></div>
+                <div onClick={() => setOnSignUp(true)} className='cursor-pointer w-[76px] h-[28px] absolute top-[14px] left-[300px] rounded-[4px] text-white box-border border-[0.8px] border-solid border-white sm:left-[550px] md:hidden'><span className='absolute w-[60px] h-[16px] top-[6px] left-[8px] font-[600] text-[12px] leading-[16px] text-white font-IBM'>Join Group</span></div>
 
 
                 {/* Computer Engineering  */}
@@ -28,10 +28,10 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
 
                 <div className='md:hidden'>
                     {/* Posts(368) */}
-                    <p className='w-[73px] h-[18px] absolute top-[258px] left-[16px] font-IBM font-[900] text-[14px] leading-[18px] text-[#212529] tracking-[0.01em] sm:left-[30px]'>Posts(368)</p>
+                    <p className='w-[73px] h-[18px] absolute top-[258px] left-[21px] font-IBM font-[900] text-[14px] leading-[18px] text-[#212529] tracking-[0.01em] sm:left-[30px]'>Posts(368)</p>
 
                     {/* Filter button  */}
-                    <button className='w-[106px] h-[32px] absolute top-[250px] left-[236px] rounded-[4px] bg-[#F1F3F5] sm:left-[500px]'><span className='absolute top-[8px] left-[10px] w-[55px] h-[17px] font-IBM font-[700] text-[13px] leading-[17px] text-[#212529] '>Filter: All</span>
+                    <button className='w-[106px] h-[32px] absolute top-[250px] left-[270px] rounded-[4px] bg-[#F1F3F5] sm:left-[500px]'><span className='absolute top-[8px] left-[10px] w-[55px] h-[17px] font-IBM font-[700] text-[13px] leading-[17px] text-[#212529] '>Filter: All</span>
                         <p className='absolute top-[1.8px] left-[81.83px]'><Image src={filter_dropdown} alt='' /></p>
                     </button>
                 </div>
