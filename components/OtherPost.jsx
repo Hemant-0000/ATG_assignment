@@ -65,10 +65,10 @@ function OtherPost({ img, emoji, category, title, date, location, site, userimg,
                 
 
                 {/* views  */}
-                <div className='absolute w-[16.5px] h-[11.25px] top-[353.2px] left-[335px] opacity-70  xl:top-[418px] xl:left-[495.75px]  '>
+                <div className='absolute w-[16.5px] h-[11.25px] hidden md:inline-block md:top-[353.2px] md:left-[335px] opacity-70  xl:top-[418px] xl:left-[495.75px]  '>
                     <Image src={eye} alt='' />
                 </div>
-                <p className='absolute top-[269px] left-[65px] h-[16px] font-IBM font-[600] text-[12px] leading-[16px] text-[#525252] md:top-[355px] md:left-[360px] xl:top-[419px] xl:left-[521px] xl:text-[14px] xl:leading-[18px] '>{views}</p>
+                <p className='absolute top-[330px] left-[65px] h-[16px] font-IBM font-[600] text-[12px] leading-[16px] text-[#525252] md:top-[355px] md:left-[360px] xl:top-[419px] xl:left-[521px] xl:text-[14px] xl:leading-[18px] '>{views}</p>
 
 
                 {/* share button  */}
