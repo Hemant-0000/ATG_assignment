@@ -7,6 +7,8 @@ import facebook from '../public/assets/facebook.png'
 import google from '../public/assets/google.png'
 import signup_login from '../public/assets/signup_login.jpg'
 import eye from '../public/assets/eye.png'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function SignUp({ setOnSignUp, setOnSignIn, setFirstName2, setLastName2, setEmail2, setPassword2 }) {
 
@@ -20,7 +22,8 @@ function SignUp({ setOnSignUp, setOnSignIn, setFirstName2, setLastName2, setEmai
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        let res = await fetch("http://localhost:3000/api/signup", {
+        const BASE_URL = "http://localhost:3000/api/signup"
+        let res = await fetch(BASE_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +31,6 @@ function SignUp({ setOnSignUp, setOnSignIn, setFirstName2, setLastName2, setEmai
             body: JSON.stringify({ firstName, lastName, email, password }),
         })
         let response = await res.json()
-        console.log(response)
 
         setOnSignUp(false)
         setFirstName2(firstName)
@@ -40,10 +42,30 @@ function SignUp({ setOnSignUp, setOnSignIn, setFirstName2, setLastName2, setEmai
         setLastName('')
         setEmail('')
         setPassword('')
+        toast.success('Your account has been created', {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={1000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
 
             {/* for small devices  */}
             <div className='md:hidden create-account z-50 w-[360px] h-screen  translate-y-[-15px] absolute top-[178px] bg-white md:top-[24px] sm:left-[135px] left-[17px] '>
@@ -132,7 +154,7 @@ function SignUp({ setOnSignUp, setOnSignIn, setFirstName2, setLastName2, setEmai
                     <input className='absolute top-[129px] h-[46px] w-[160px]  p-[15px] left-[196px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB]' placeholder='Last Name' type="text" name='lastName' value={lastName} onChange={(e) => setLastName(e.target.value)} />
 
                     {/* Email  */}
-                    <input className='absolute w-[320px] h-[46px] top-[174px] left-[36px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[15px]' placeholder='Email' type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input className='absolute w-[320px] h-[46px] top-[174px] left-[36px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[15px]' placeholder='Email' type="email" name='email' value={email} required onChange={(e) => setEmail(e.target.value)} />
 
                     {/* Password  */}
                     <div className='absolute w-[320px] h-[46px] top-[219px] left-[36px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] box-border border-[1px] border-solid border-[#D9D9DB] p-[15px]'>

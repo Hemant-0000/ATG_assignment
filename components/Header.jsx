@@ -11,7 +11,7 @@ function Header({ setOnSignUp, setOnSignIn, onSignUp, onSignIn, firstName2, last
         <>
             <div className='hidden md:inline-flex'><Navbar firstName2={firstName2} lastName2={lastName2} setOnSignUp={setOnSignUp} setOnSignIn={setOnSignIn} onSignUp={onSignUp} onSignIn={onSignIn} /></div>
 
-            <div id='header' className={`header ${(onSignUp || onSignIn) ? 'blur-md' : ''} h-[236px] mb-[66px] bg-no-repeat bg-cover bg-gradient-to-tr from-cyan-400 to bg-cyan-800 w-full xl:h-[440px] `}>
+            <div id='header' className={`header ${(onSignUp || onSignIn) ? 'blur-md' : ''} h-[236px] mb-[66px] bg-no-repeat bg-cover bg-gradient-to-tr from-[#CB5762] to bg-[#151433] w-full xl:h-[440px] `}>
 
                 {/* Back Arrow  */}
                 <div className='absolute w-[16px] h-[16px] left-[20px] top-[20px] text-white md:hidden '><Image src={back_arrow} alt='' /></div>
