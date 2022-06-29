@@ -17,7 +17,19 @@ function Header({ setOnSignUp, setOnSignIn, onSignUp, onSignIn, firstName2, last
                 <div className='absolute w-[16px] h-[16px] left-[20px] top-[20px] text-white md:hidden '><Image src={back_arrow} alt='' /></div>
 
                 {/* Join Group  */}
-                <div onClick={() => setOnSignUp(true)} className='cursor-pointer w-[76px] h-[28px] absolute top-[14px] left-[300px] rounded-[4px] text-white box-border border-[0.8px] border-solid border-white sm:left-[550px] md:hidden'><span className='absolute w-[60px] h-[16px] top-[6px] left-[8px] font-[600] text-[12px] leading-[16px] text-white font-IBM'>Join Group</span></div>
+
+                {(firstName2.length > 0) ?
+                    <div onClick={() => setOnSignUp(true)} className='cursor-pointer w-[180px] h-[28px] absolute top-[14px] left-[210px] flex text-white box-border sm:left-[450px] md:hidden'>
+                        <p className='text-[15px] leading-[21px] font-[200] text-white absolute left-[13px]'>Welcome 🎉,</p>
+                        <span onClick={() =>  setOnSignIn(true) } className='cursor-pointer font-[800] text-[13px] text-[#FFF6D9] font-IBM absolute right-[10px] top-[1px]'>{firstName2}  <Image className='bg-white  ' src={filter_dropdown} alt='' />
+                        </span>
+                    </div>
+                    :
+                    <div onClick={() => setOnSignUp(true)} className='cursor-pointer w-[90px] h-[28px] absolute top-[14px] left-[289px] rounded-[4px] text-white box-border border-[0.8px] border-solid border-white sm:left-[550px] md:hidden'>
+                        <span className='absolute w-[80px] h-[16px] top-[7px] mx-[4px] text-center font-[400] leading-[10px] p-auto text-[13px] text-white font-IBM'>Sign Up</span>
+                    </div>
+                }
+
 
 
                 {/* Computer Engineering  */}

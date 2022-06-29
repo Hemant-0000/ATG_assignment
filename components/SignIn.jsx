@@ -29,11 +29,7 @@ function SignIn({ setOnSignIn, setOnSignUp, setFirstName2, setEmail2 }) {
             body: JSON.stringify(data),
         })
         let response = await res.json()
-        var decodedToken =  jwt.decode(response.token) 
-
-        setFirstName2(decodedToken.firstName)
-        setEmail2(decodedToken.email)
-
+        var decodedToken = jwt.decode(response.token)
         setEmail('')
         setPassword('')
         if (response.success) {
@@ -47,6 +43,9 @@ function SignIn({ setOnSignIn, setOnSignUp, setFirstName2, setEmail2 }) {
                 progress: undefined,
             });
             setOnSignIn(false)
+            setOnSignUp(false)
+            setFirstName2(decodedToken.firstName)
+            setEmail2(decodedToken.email)
         } else {
             toast.error(response.error, {
                 position: "top-right",
@@ -77,50 +76,53 @@ function SignIn({ setOnSignIn, setOnSignUp, setFirstName2, setEmail2 }) {
             {/* for small devices  */}
             <div className='md:hidden create-account z-50 w-[360px] h-screen translate-y-[-15px] absolute top-[178px] bg-white md:top-[24px] sm:left-[135px] left-[17px] '>
 
-                {/* Welcome back  */}
-                <h1 className='w-[130px] h-[23px] absolute top-[22px] left-[20px] font-IBM font-[700] text-[18px] leading-[23px] text-black '>Welcome back!</h1>
+                <form onSubmit={handleSubmit} method='POST'>
 
-                {/* cut icon  */}
-                <div onClick={() => setOnSignIn(false)} className='cursor-pointer absolute top-[24px] left-[318px] '><Image src={cut_icon} alt='' /></div>
+                    {/* Welcome back  */}
+                    <h1 className='w-[130px] h-[23px] absolute top-[22px] left-[20px] font-IBM font-[700] text-[18px] leading-[23px] text-black '>Welcome back!</h1>
 
-                <div className='absolute border-[#D9D9DB] rounded-t-[2px] rounded-b-[2px]'>
-                    {/* Email  */}
-                    <input className='absolute w-[320px] h-[40px] top-[65px] left-[20px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[12px]' placeholder='Email' type="email" />
+                    {/* cut icon  */}
+                    <div onClick={() => setOnSignIn(false)} className='cursor-pointer absolute top-[24px] left-[318px] '><Image src={cut_icon} alt='' /></div>
 
-                    {/* Password  */}
-                    <div className='absolute w-[320px] h-[40px] top-[104px] left-[20px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] box-border border-[1px] border-solid border-[#D9D9DB] p-[12px]'>
-                        <input className='outline-none w-[250px] bg-[#F7F8FA]' placeholder='Password' type={textType} />
-                        <div onClick={() => textType === 'password' ? setTextType('text') : setTextType('password')} className='w-[16.25px] h-[11.25px] absolute top-[10px] left-[284.75px]' >
-                            <Image className={`${textType === 'text' ? 'opacity-90' : 'opacity-50'}`} src={eye} alt='' />
+                    <div className='absolute border-[#D9D9DB] rounded-t-[2px] rounded-b-[2px]'>
+                        {/* Email  */}
+                        <input className='absolute w-[320px] h-[40px] top-[65px] left-[20px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] outline-none box-border border-[1px] border-solid border-[#D9D9DB] p-[12px]' name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' type="email" />
+
+                        {/* Password  */}
+                        <div className='absolute w-[320px] h-[40px] top-[104px] left-[20px] text-[#8A8A8A] font-IBM font-[500] text-[13px] leading-[16px] bg-[#F7F8FA] box-border border-[1px] border-solid border-[#D9D9DB] p-[12px]'>
+                            <input className='outline-none w-[250px] bg-[#F7F8FA]' name='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' type={textType} />
+                            <div onClick={() => textType === 'password' ? setTextType('text') : setTextType('password')} className='w-[16.25px] h-[11.25px] absolute top-[10px] left-[284.75px]' >
+                                <Image className={`${textType === 'text' ? 'opacity-90' : 'opacity-50'}`} src={eye} alt='' />
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    {/* Sign in  */}
+                    <button type='submit' className='w-[150px] h-[36px] absolute top-[166px] left-[20px] rounded-[20px] font-IBM font-[600] text-[13px] leading-[16px] text-center text-white bg-[#2F6CE5]'>Sign In</button>
+
+                    {/* or, Create Acc  */}
+                    <p onClick={async () => { await setOnSignIn(false), await setOnSignUp(true) }} className='w-[110px] h-[17px] absolute top-[175px] left-[230px] font-IBM font-[600] text-[13px] leading-[17px] text-center text-[#495057] underline cursor-pointer'>or, Create Account</p>
+
+
+                    {/* Sign in with Facebook  */}
+                    <div className='cursor-pointer w-[320px] h-[38px] absolute top-[224px] left-[20px] rounded-[2px] box-border bg-white border-[0.6px] border-solid border-[#D9D9DB]  '>
+                        <div className='absolute top-[8px] left-[82px]  '><Image src={facebook} alt='' />
+                            <p className='w-[131px] h-[16px] absolute top-[1.8px] left-[28px] font-IBM font-[400] text-[13px] leading-[16px] text-black cursor-pointer'>Sign in with Facebook</p>
                         </div>
                     </div>
 
-                </div>
-
-
-                {/* Sign in  */}
-                <button className='w-[150px] h-[36px] absolute top-[166px] left-[20px] rounded-[20px] font-IBM font-[600] text-[13px] leading-[16px] text-center text-white bg-[#2F6CE5]'>Sign In</button>
-
-                {/* or, Create Acc  */}
-                <p onClick={async () => { await setOnSignIn(false), await setOnSignUp(true) }} className='w-[110px] h-[17px] absolute top-[175px] left-[230px] font-IBM font-[600] text-[13px] leading-[17px] text-center text-[#495057] underline cursor-pointer'>or, Create Account</p>
-
-
-                {/* Sign in with Facebook  */}
-                <div className='cursor-pointer w-[320px] h-[38px] absolute top-[224px] left-[20px] rounded-[2px] box-border bg-white border-[0.6px] border-solid border-[#D9D9DB]  '>
-                    <div className='absolute top-[8px] left-[82px]  '><Image src={facebook} alt='' />
-                        <p className='w-[131px] h-[16px] absolute top-[1.8px] left-[28px] font-IBM font-[400] text-[13px] leading-[16px] text-black cursor-pointer'>Sign in with Facebook</p>
+                    {/* Sign in with Google  */}
+                    <div className='cursor-pointer w-[320px] h-[38px] absolute top-[274px] left-[20px] rounded-[2px] box-border bg-white border-[0.6px] border-solid border-[#D9D9DB]  '>
+                        <div className='absolute top-[8px] left-[82px] w-[16px] h-[16px] '><Image src={google} alt='' />
+                            <p className='w-[131px] h-[16px] absolute top-[1.8px] left-[28px] font-IBM font-[400] text-[13px] leading-[16px] text-black cursor-pointer'>Sign in with Google</p>
+                        </div>
                     </div>
-                </div>
 
-                {/* Sign in with Google  */}
-                <div className='cursor-pointer w-[320px] h-[38px] absolute top-[274px] left-[20px] rounded-[2px] box-border bg-white border-[0.6px] border-solid border-[#D9D9DB]  '>
-                    <div className='absolute top-[8px] left-[82px] w-[16px] h-[16px] '><Image src={google} alt='' />
-                        <p className='w-[131px] h-[16px] absolute top-[1.8px] left-[28px] font-IBM font-[400] text-[13px] leading-[16px] text-black cursor-pointer'>Sign in with Google</p>
-                    </div>
-                </div>
-
-                {/* Forgot password  */}
-                <p className='cursor-pointer absolute top-[334px] left-[57px] w-[240px] h-[16px] font-IBM font-[600] text-[11px] leading-[16px] text-center text-[#212529] tracking-[-0.008em] '>Forgot Password?</p>
+                    {/* Forgot password  */}
+                    <p className='cursor-pointer absolute top-[334px] left-[57px] w-[240px] h-[16px] font-IBM font-[600] text-[11px] leading-[16px] text-center text-[#212529] tracking-[-0.008em] '>Forgot Password?</p>
+                </form>
 
             </div>
 
@@ -128,8 +130,8 @@ function SignIn({ setOnSignIn, setOnSignUp, setFirstName2, setEmail2 }) {
 
             {/* for medium & above devices */}
 
-            <form onSubmit={handleSubmit} method='POST'>
-                <div className='hidden md:inline-flex z-50 w-[736px] h-[457px] absolute top-[186px] left-[15px] rounded-[8px] bg-white shadow-acc-shadow lg:left-[150px] lg:top-[158px] xl:left-[300px] 2xl:left-[358px] '>
+            <div className='hidden md:inline-flex z-50 w-[736px] h-[457px] absolute top-[186px] left-[15px] rounded-[8px] bg-white shadow-acc-shadow lg:left-[150px] lg:top-[158px] xl:left-[300px] 2xl:left-[358px] '>
+                <form onSubmit={handleSubmit} method='POST'>
 
                     {/* cut icon  */}
                     <div onClick={() => setOnSignIn(false)} className='cursor-pointer w-[23.33px] h-[23.33px] absolute top-[-38px] left-[710px] lg:left-[722px] opacity-60  '>
@@ -188,8 +190,8 @@ function SignIn({ setOnSignIn, setOnSignUp, setFirstName2, setEmail2 }) {
                     </div>
 
 
-                </div>
-            </form>
+                </form>
+            </div>
 
         </>
     )

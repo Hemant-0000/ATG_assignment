@@ -37,9 +37,10 @@ function Navbar({ setOnSignUp, setOnSignIn, onSignUp, onSignIn, firstName2 }) {
 
                 {/* Create account  */}
 
-                {firstName2.length > 0 ?
-                    <div className='absolute w-[340px] h-[21px] top-[27px] left-[590px] font-IBM flex lg:left-[820px] xl:left-[1090px] 2xl:left-[1180px] '>
-                        <p className='text-[14px] leading-[21px] font-[900] text-[#2E2E2E] mr-[13px] '>Hello {firstName2}, Welcome to board 🎉</p>
+                {(firstName2.length > 0) ?
+                    <div className='absolute w-[340px] h-[21px] top-[27px] left-[590px] font-IBM flex lg:left-[702px] xl:left-[950px] 2xl:left-[1180px] '>
+                        <p className='text-[14px] md:hidden lg:inline-block leading-[21px] font-[900] text-[#2E2E2E] mr-[13px] '>Hello {firstName2}, Welcome to board 🎉</p>
+                        <p className='text-[14px] md:inline-block lg:hidden leading-[21px] font-[900] text-[#2E2E2E] mr-[13px] '>Hello {firstName2}</p>
                         <span onClick={() =>  setOnSignIn(true) } className='cursor-pointer font-[800] text-[14px] text-[#2F6CE5] '> Sign out <Image src={filter_dropdown} alt='' />
                         </span>
                     </div> :
