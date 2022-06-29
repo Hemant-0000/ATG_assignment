@@ -5,11 +5,11 @@ import filter_dropdown from '../public/assets/filter_dropdown.svg'
 import join_group from '../public/assets/join_group.svg'
 import Navbar from './Navbar'
 
-function Header({ setOnSignUp, onSignUp, onSignIn }) {
+function Header({ setOnSignUp, setOnSignIn, onSignUp, onSignIn, firstName2, lastName2 }) {
 
     return (
         <>
-            <div className='hidden md:inline-flex'><Navbar setOnSignUp={setOnSignUp} onSignUp={onSignUp} onSignIn={onSignIn} /></div>
+            <div className='hidden md:inline-flex'><Navbar firstName2={firstName2} lastName2={lastName2} setOnSignUp={setOnSignUp} setOnSignIn={setOnSignIn} onSignUp={onSignUp} onSignIn={onSignIn} /></div>
 
             <div id='header' className={`header ${(onSignUp || onSignIn) ? 'blur-md' : ''} h-[236px] mb-[66px] bg-no-repeat bg-cover bg-gradient-to-tr from-cyan-400 to bg-cyan-800 w-full xl:h-[440px] `}>
 
@@ -66,7 +66,7 @@ function Header({ setOnSignUp, onSignUp, onSignIn }) {
 
                     {/* Join Group  */}
                     <button className='w-[125px] h-[36px] absolute top-[250px] ml-[630px] bg-[#2F6CE5] rounded-[4px] lg:ml-[720px] xl:top-[478px] xl:left-[410px] '>
-                        <p className='w-[22px] h-[11.92px] absolute top-[5.5px] left-[10px]  '><Image src={join_group} alt=''/></p>
+                        <p className='w-[22px] h-[11.92px] absolute top-[5.5px] left-[10px]  '><Image src={join_group} alt='' /></p>
                         <span className='w-[75px] h-[20px] absolute left-[38px] top-[8px] font-IBM font-[700] text-[15px] leading-[20px] text-white '>Join Group</span>
                     </button>
 

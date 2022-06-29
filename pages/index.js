@@ -9,7 +9,13 @@ export default function Home() {
 
   const [onSignUp, setOnSignUp] = useState(false)
   const [onSignIn, setOnSignIn] = useState(false)
-  
+
+  const [firstName2, setFirstName2] = useState('')
+  const [lastName2, setLastName2] = useState('')
+  const [email2, setEmail2] = useState('')
+  const [password2, setPassword2] = useState('')
+
+
   return (
     <div className=''>
       <Head>
@@ -19,8 +25,10 @@ export default function Home() {
       </Head>
 
 
-      <Header setOnSignUp={setOnSignUp} onSignUp={onSignUp} onSignIn={onSignIn} />
-      {onSignUp && <SignUp setOnSignIn={setOnSignIn} setOnSignUp={setOnSignUp} />}
+      <Header firstName2={firstName2} lastName2={lastName2} setOnSignUp={setOnSignUp} onSignUp={onSignUp} onSignIn={onSignIn} setOnSignIn={setOnSignIn} />
+
+      {onSignUp && <SignUp firstName2={firstName2} lastName2={lastName2} email2={email2} password2={password2} setFirstName2={setFirstName2} setLastName2={setLastName2} setEmail2={setEmail2} setPassword2={setPassword2} setOnSignIn={setOnSignIn} setOnSignUp={setOnSignUp} />}
+
       {onSignIn && <SignIn setOnSignUp={setOnSignUp} setOnSignIn={setOnSignIn} />}
       <Posts onSignIn={onSignIn} onSignUp={onSignUp} />
 

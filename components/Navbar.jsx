@@ -13,7 +13,7 @@ import L from '../public/assets/L.svg'
 import D from '../public/assets/D.svg'
 
 
-function Navbar({ setOnSignUp, onSignUp, onSignIn }) {
+function Navbar({ setOnSignUp, setOnSignIn, onSignUp, onSignIn, firstName2 }) {
     return (
         <>
             <div className={`w-full h-[72px] ${(onSignIn || onSignUp) ? 'blur-md' : ''} `}>
@@ -36,9 +36,19 @@ function Navbar({ setOnSignUp, onSignUp, onSignIn }) {
                 </div>
 
                 {/* Create account  */}
-                <div onClick={() => { setOnSignUp(true) }} className='cursor-pointer absolute w-[183px] h-[21px] top-[27px] text-[14px] left-[590px] font-IBM  leading-[21px] flex lg:left-[820px] xl:left-[1090px] 2xl:left-[1335px] '>
-                    <p className='cursor-pointer font-[600] text-[#2E2E2E] '>Create account.</p><span className='font-[800] text-[#2F6CE5] '> It&#8217;s free! <Image src={filter_dropdown} alt='' /></span>
-                </div>
+
+                {firstName2.length > 0 ?
+                    <div className='absolute w-[340px] h-[21px] top-[27px] left-[590px] font-IBM flex lg:left-[820px] xl:left-[1090px] 2xl:left-[1180px] '>
+                        <p className='text-[14px] leading-[21px] font-[900] text-[#2E2E2E] mr-[13px] '>Hello {firstName2}, Welcome to board 🎉</p>
+                        <span onClick={() => { setOnSignIn(true) }} className='cursor-pointer font-[800] text-[14px] text-[#2F6CE5] '> Sign out <Image src={filter_dropdown} alt='' />
+                        </span>
+                    </div> :
+                    <div onClick={() => { setOnSignUp(true) }} className='cursor-pointer absolute w-[183px] h-[21px] top-[27px] text-[14px] left-[590px] font-IBM  leading-[21px] flex lg:left-[820px] xl:left-[1090px] 2xl:left-[1335px] '>
+                        <p className='cursor-pointer font-[600] text-[#2E2E2E] '>Create account.</p>
+                        <span className='font-[800] text-[#2F6CE5] '> It&#8217;s free! <Image src={filter_dropdown} alt='' />
+                        </span>
+                    </div>
+                }
 
             </div>
         </>
