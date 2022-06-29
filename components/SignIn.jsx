@@ -8,9 +8,10 @@ import signup_login from '../public/assets/signup_login.jpg'
 import eye from '../public/assets/eye.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+var jwt = require('jsonwebtoken');
 
 
-function SignIn({ setOnSignIn, setOnSignUp }) {
+function SignIn({ setOnSignIn, setOnSignUp, setFirstName2, setEmail2 }) {
 
     const [textType, setTextType] = useState('password')
 
@@ -20,7 +21,7 @@ function SignIn({ setOnSignIn, setOnSignUp }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const data = { email, password }
-        const BASE_URL = "http://localhost:3000/api/login"
+        const BASE_URL = "https://atg-assignment-by-me.netlify.app/api/login"
         let res = await fetch(BASE_URL, {
             method: 'POST',
             headers: {
@@ -29,6 +30,11 @@ function SignIn({ setOnSignIn, setOnSignUp }) {
             body: JSON.stringify(data),
         })
         let response = await res.json()
+        var decodedToken =  jwt.decode(response.token) 
+
+        setFirstName2(decodedToken.firstName)
+        setEmail2(decodedToken.email)
+
         setEmail('')
         setPassword('')
         if (response.success) {

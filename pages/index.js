@@ -29,7 +29,7 @@ export default function Home() {
 
       {onSignUp && <SignUp firstName2={firstName2} lastName2={lastName2} email2={email2} password2={password2} setFirstName2={setFirstName2} setLastName2={setLastName2} setEmail2={setEmail2} setPassword2={setPassword2} setOnSignIn={setOnSignIn} setOnSignUp={setOnSignUp} />}
 
-      {onSignIn && <SignIn setOnSignUp={setOnSignUp} setOnSignIn={setOnSignIn} />}
+      {onSignIn && <SignIn setFirstName2={setFirstName2} setEmail2={setEmail2} setOnSignUp={setOnSignUp} setOnSignIn={setOnSignIn} />}
       <Posts onSignIn={onSignIn} onSignUp={onSignUp} />
 
     </div>
