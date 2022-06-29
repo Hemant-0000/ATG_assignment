@@ -21,8 +21,7 @@ function SignIn({ setOnSignIn, setOnSignUp, setFirstName2, setEmail2 }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const data = { email, password }
-        const BASE_URL = "https://atg-assignment-by-me.netlify.app/api/login"
-        let res = await fetch(BASE_URL, {
+        let res = await fetch(`${process.env.baseurl}/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
