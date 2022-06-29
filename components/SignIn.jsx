@@ -21,7 +21,7 @@ function SignIn({ setOnSignIn, setOnSignUp, setFirstName2, setEmail2 }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const data = { email, password }
-        let res = await fetch(`${process.env.baseurl}/api/login`, {
+        let res = await fetch(`${process.env.NEXT_PUBLIC_baseurl}/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
